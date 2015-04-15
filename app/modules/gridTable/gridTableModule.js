@@ -8,6 +8,12 @@
             templateUrl : "modules/gridTable/views/gridTable.html",
             controller: "gridTableController"
         });
+        
+        $stateProvider.state('home', {
+            url : "/home",
+            templateUrl : "modules/gridTable/views/homePage.html",
+            controller: "gridTableController"
+        });
     }]);
     
     
