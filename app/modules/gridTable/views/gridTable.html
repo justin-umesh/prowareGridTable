@@ -9,9 +9,9 @@
                 <div class="row">                   
                     <div class="col-md-9">
                         <textarea ng-model = "gridBox.description" required></textarea>
-                        <div class="alert alert-danger" ng-show="descriptionForm.required.$invalid && descriptionForm.required.$dirty">
-                            <ul>
-                                <li ng-show="form.number.$error.required">this field is required</li>
+                        <div class="alert alert-danger" ng-show="descriptionForm_{{grid.id}}.$invalid">
+                            <ul class="list-group">
+                                <li>this field is required</li>
                             </ul>
                         </div>
                     </div>
@@ -27,7 +27,14 @@
             <div class="titleModal" ng-show="showtitleModal">
                 <form ng-submit="Descriptsubmit(grid.id, gridBox, grids)" name="titleForm_{{grid.id}}">
                 <div class="row">                    
-                    <div class="col-md-9"><input type="text" ng-model = "gridBox.title" required></div>
+                    <div class="col-md-9">
+                        <input type="text" ng-model = "gridBox.title" required>
+                        <div class="alert alert-danger" ng-show="titleForm_{{grid.id}}.$invalid">
+                            <ul class="list-group">
+                                <li>this field is required</li>
+                            </ul>
+                        </div>
+                    </div>
                     <div class="col-md-3">
                         <div class="btn-group-vertical">
                             <button type="submit" ng-click="showtitleModal = !showtitleModal" class="btn btn-success" ng-disabled="titleForm_{{grid.id}}.$invalid"><span class="">+</span></button>

@@ -28,3 +28,8 @@
 .clr-btn {
     padding: 15px 0;
 }
+
+.alert.alert-danger{
+    margin: 0;
+    padding: 0;
+}
