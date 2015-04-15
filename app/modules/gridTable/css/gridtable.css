@@ -24,3 +24,7 @@
 .show-grid .description, .descModal textarea, .titleModal input{
     width: 100%
 }
+
+.clr-btn {
+    padding: 15px 0;
+}

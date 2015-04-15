@@ -6,5 +6,8 @@
         $scope.Descriptsubmit = function (id, gridBox, allGrids) {
             $scope.grids = gridService.AddGridDetails(id, gridBox, allGrids);
         };
+        $scope.clearGrid = function () {
+           $scope.grids = gridService.getAllGrids();
+        };
     }]);
 }());
