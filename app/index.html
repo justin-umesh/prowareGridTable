@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="gridTableApp">
+<head>
+  <title>Table Grid with inline edit and save</title>
+  
+  <!--  Meta tags -->   
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">  
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+  <!-- StyleSheets -->    
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="stylesheets/app.css">
+  <link rel="stylesheet" href="modules/gridTable/css/gridtable.css">  
+</head>
+<body>
+   
+    <!-- Header -->
+    <header ng-include="'includes/header.html'"></header>
+    
+    <!-- Container -->
+    <div class="container">
+        <div ui-view></div>        
+    </div>
+    
+    <!-- Footer -->
+    <footer class="footer" ng-include="'includes/footer.html'"></footer>
+    
+  
+    <!-- Global Scripts -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    
+    <script src="js/app.js"></script>    
+    <script src="js/controllers.js"></script>
+    <script src="js/directives.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/filters.js"></script>
+    
+    <!-- Grid Module -->
+    <script src="modules/gridTable/gridTableModule.js"></script>
+    <script src="modules/gridTable/js/controllers.js"></script>
+    <script src="modules/gridTable/js/directives.js"></script>
+    <script src="modules/gridTable/js/services.js"></script>
+    <script src="modules/gridTable/js/filters.js"></script>
+    
+</body>
+</html>
