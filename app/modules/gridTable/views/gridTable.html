@@ -5,12 +5,19 @@
             <div class="description"><a href="" ng-click="showdescModal = !showdescModal">{{grid.description}}</a></div>
             <div class="title"><a href="" ng-click="showtitleModal = !showtitleModal">{{grid.title}}</a></div>            
             <div class="descModal" ng-show="showdescModal">
-                <form novalidate ng-submit="Descriptsubmit(grid.id, gridBox, grids)">
+                <form name="descriptionForm_{{grid.id}}" ng-submit="Descriptsubmit(grid.id, gridBox, grids)">
                 <div class="row">                   
-                    <div class="col-md-9"><textarea ng-model = "gridBox.description"></textarea></div>
+                    <div class="col-md-9">
+                        <textarea ng-model = "gridBox.description" required></textarea>
+                        <div class="alert alert-danger" ng-show="descriptionForm.required.$invalid && descriptionForm.required.$dirty">
+                            <ul>
+                                <li ng-show="form.number.$error.required">this field is required</li>
+                            </ul>
+                        </div>
+                    </div>
                     <div class="col-md-3">
                         <div class="btn-group-vertical">
-                            <button type="submit" class="btn btn-success"><span class="">+</span></button>
+                            <button type="submit" ng-click="showdescModal = !showdescModal" ng-disabled="descriptionForm_{{grid.id}}.$invalid" class="btn btn-success"><span class="">+</span></button>
                             <button type="button" class="btn btn-danger" ng-click="showdescModal = !showdescModal"><span class="">X</span></button>
                         </div>    
                     </div>                      
@@ -18,12 +25,12 @@
                 </form>    
             </div>
             <div class="titleModal" ng-show="showtitleModal">
-                <form novalidate ng-submit="Descriptsubmit(grid.id, gridBox, grids)">
+                <form ng-submit="Descriptsubmit(grid.id, gridBox, grids)" name="titleForm_{{grid.id}}">
                 <div class="row">                    
-                    <div class="col-md-9"><input type="text" ng-model = "gridBox.title"></div>
+                    <div class="col-md-9"><input type="text" ng-model = "gridBox.title" required></div>
                     <div class="col-md-3">
                         <div class="btn-group-vertical">
-                            <button type="submit" class="btn btn-success"><span class="">+</span></button>
+                            <button type="submit" ng-click="showtitleModal = !showtitleModal" class="btn btn-success" ng-disabled="titleForm_{{grid.id}}.$invalid"><span class="">+</span></button>
                             <button type="button" class="btn btn-danger" ng-click="showtitleModal = !showtitleModal"><span class="">X</span></button>
                         </div>    
                     </div>
