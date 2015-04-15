@@ -4,9 +4,9 @@
     angular.module('gridTableApp.gridTable.services', []).factory('gridService', function () {
         return {
             addGrids : function () {
-                var gridsLength = 9, gridsArray = new Array(gridsLength);
-                for (var i=0; i<gridsArray.length;i++){
-                   gridsArray[i] = {id:i, 'title':'Add Title', 'description' : 'Add Description'};
+                var gridsLength = 1000, gridsArray = [];
+                for (var i=0; i<gridsLength;i++){
+                   gridsArray.push({id:i, 'title':'Add Title', 'description' : 'Add Description'});
                 }
                 return gridsArray;
             },
